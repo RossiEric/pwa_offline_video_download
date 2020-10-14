@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang=”pt-br”>
+	<head>
+		<meta charset=”UTF-8”>
+		<link rel=”stylesheet” type=”text/css” href=”estilo.css”>
+		<title>Pock Z.Midia Offline</title>
+
+		<!--
+		<link href="//amp.azure.net/libs/amp/2.3.0/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+		<script src="//amp.azure.net/libs/amp/2.3.0/azuremediaplayer.min.js"></script>
+		-->
+		<link href="assets/style/azuremediaplayer.min.css" rel="stylesheet">
+		<script src="assets/js/azuremediaplayer.min.js"></script>
+
+
+	</head>
+	<body>
+
+		<video id="azuremediaplayer1" style="margin:auto" class="azuremediaplayer amp-default-skin amp-big-play-centered" tabindex="1"></video>
+
+		<script>
+			var myOptions1 = {
+				"nativeControlsForTouch": false,
+				controls: true,
+				autoplay: false,
+				width: "640",
+				height: "400",
+				logo: {enabled: false}
+			}
+			myPlayer1 = amp("azuremediaplayer1", myOptions1);
+			myPlayer1.src([
+				{
+					"src": "https://pwamirante.mirahomologacao.com.br/video/v2.mp4",
+					"type": "video/mp4"
+					
+				}
+			]);
+			
+			
+			//"src": "//amssamples.streaming.mediaservices.windows.net/3b970ae0-39d5-44bd-b3a3-3136143d6435/AzureMediaServicesPromo.ism/manifest",
+			//"type": "application/vnd.ms-sstr+xml"
+
+
+			/* AZURE CONTROLA TEMPO */
+			//myPlayer1.currentMediaTime()
+			//myPlayer1.addEventListener(amp.eventName.click, alertteste);
+			//myPlayer1.addEventListener(amp.eventName.play, startTime);
+			//myPlayer1.addEventListener(amp.eventName.pause, end);
+			//myPlayer1.addEventListener(amp.eventName.complete, end);
+			
+
+			function startTime() {
+				start();
+				
+				var timerParou = Number(localStorage.getItem("timerVideo"));
+				if(timerParou != null){
+					myPlayer1.currentTime(timerParou); //https://amp.azure.net/libs/amp/latest/docs/index.html#amp.player.currenttime
+				}	
+
+				myPlayer1.removeEventListener(amp.eventName.play, startTime);
+			}
+			
+			/* guarda tempo percorrido */
+			var startTime, endTime;
+
+			function start() {
+			startTime = new Date();
+			};
+
+			function end() {
+			endTime = new Date();
+			var timeDiff = endTime - startTime; //in ms
+			// strip the ms
+			timeDiff /= 1000;
+
+			// get seconds 
+			var seconds = Math.round(timeDiff);
+			console.log(seconds + " seconds");
+			alert(seconds + " seconds");
+			
+			localStorage.setItem("timerVideo", seconds);
+			
+			}
+			
+			function alertteste(){
+				alert(myPlayer1.currentTime() + " seconds");
+			}	
+			
+			/*
+			// Download - N/A
+			// Retomar vídeo - OK
+			// Clique em video / start video - OK
+			// ADM Publicacao de videos
+			
+			https://amp.azure.net/libs/amp/latest/docs/index.html#amp.player.currentmediatime
+			https://docs.microsoft.com/en-us/azure/media-services/latest/use-azure-media-player
+			https://ampdemo.azureedge.net/azuremediaplayer.html
+			https://stackoverflow.com/questions/59358631/azure-media-player-continue-the-playback-where-left-off
+			https://amp.azure.net/libs/amp/latest/docs/samples.html
+			https://stackoverflow.com/questions/31266839/microsoft-azure-media-player-start-at-defined-time
+
+			myPlayer1.currentMediaTime()
+
+			ultreinamento.mirahomologacao.com.br/teste_azure_midia_3.html
+						
+			//offline
+			https://stackoverflow.com/questions/34699517/offline-playback-available-through-azure-media-services-any-idea
+			https://azure.microsoft.com/en-us/resources/videos/azure-web-apps-introduces-local-cache/
+			https://stackoverflow.com/questions/41916875/is-it-possible-to-cache-an-entire-html5-video-using-the-service-worker-api-for-o ********* pwa video local cache
+			https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa ********
+			https://stackoverflow.com/questions/48556544/how-to-offline-video-content-using-pwa
+			https://github.com/mohammadnazari110/pwa_offline_video_download
+			https://github.com/googlearchive/sample-media-pwa
+			
+			https://medium.com/dev-channel/offline-storage-for-progressive-web-apps-70d52695513c
+			
+			
+			//APP PWA
+			app offline, download, guarda caminho para rodar video local
+
+			*/
+		</script>
+	</body>
+
+</html>
+
+   
