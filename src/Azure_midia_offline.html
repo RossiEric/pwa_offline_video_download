@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
-<html lang=”pt-br”>
+<html lang="pt-br">
 	<head>
-		<meta charset=”UTF-8”>
+		<meta charset="UTF-8">
 		<title>Pock Z.Midia Offline</title>
+
 		<link href="assets/style/style.css" rel="stylesheet">
 	</head>
 	<body>
@@ -22,15 +23,16 @@
 
 			<span> Download Video</span>
 		</button>
+		<div class="progress-bar">
+			<div></div>
+		</div>
 
 		<button onclick="app.LoadVideo();">
 			<span> Init Video</span>
 		</button>
 
-		<div class="progress-bar">
-			<div></div>
-		</div>
-
+		<!--PWA-->
+		<script src="assets/js/Offline/sw_install.js"></script>
 		<!--addons-->
 		<script src="assets/Addons/jquery.min.js"></script>
 		<script src="assets/Addons/pouchdb-7.2.1.min.js"></script>
