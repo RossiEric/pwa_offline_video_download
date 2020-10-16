@@ -1,12 +1,18 @@
 {
- "dir": "ltr",
- "lang": "en",
- "short_name": "Download Offline",
- "name": "Download Offline",
- "description":"Download Offline",
- "theme_color": "#FE9901",
- "background_color": "#1D1F45",
- "display": "standalone",
- "scope": "/",
- "start_url": "/"
-}
+    "name": "A.Midia, offline videos and page",
+    "short_name": "MidiaOff",
+    "theme_color": "#005f97",
+    "background_color": "#005f97",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/Azure_midia_offline.html",
+    "lang": "pt-BR",
+    "orientation": "any",
+    "icons": [
+      {
+        "src": "/assets/media/iconfinder_image_1055042.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
