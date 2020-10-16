@@ -1,16 +1,9 @@
-# PWA download video and watch offline 
+# PWA - Azure mídia player, page and vídeo offline
+
+Base on project https://github.com/mohammadnazari110/pwa_offline_video_download from Mohammad Nazari - https://github.com/mohammadnazari110.
+
+the page 'Azure_midia_offline.html' now can be opening offline. If the video is cached, is can play in a Azure Mídea Player.
 
 use local database #PouchDB
 
-demo https://pwa-offline-video.netlify.com…
-
-this is a sample PWA app for download video and store to indexedDB with pouchDB
-
-when user click on video send a GET request to video url for download
-after finished request video blob data stored in local database with pouchDB 
-
-![alt text](https://github.com/mohammadnazari110/pwa_offline_video_download/blob/master/screenShot/1.png)
-
-![alt text](https://github.com/mohammadnazari110/pwa_offline_video_download/blob/master/screenShot/2.png)
-
-complete veresion run in VOD platform => PWA MobileApp https://m.monibapp.com
+Forked from: https://github.com/mohammadnazari110/pwa_offline_video_download
